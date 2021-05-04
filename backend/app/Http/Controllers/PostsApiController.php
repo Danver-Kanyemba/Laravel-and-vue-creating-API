@@ -15,13 +15,22 @@ class PostsApiController extends Controller
 
     public function store(){
         request()->validate([
-            'title' => 'required',
+            'company_name' => 'required',
+            'job_title' => 'required',
             'content' => 'required',
+            'contact_address' => 'required',
+            'company_name' => 'required',
+            'due_date' => 'required',            
         ]);
     
         return Post::create([
-            'title' => request('title'),
+            
+            'company_name' => request('title'),
+            'job_title' => request('job_title'),
             'content' => request('content'),
+            'contact_address' => request('contact_address'),
+            'company_name' => request('company_name'),
+            'due_date' => request('due_date'),            
         ]);
     }    
     public function update(Post $post){

@@ -15,8 +15,12 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('url_For_Posts')->default(null);
+            $table->string('company_name');
+            $table->string('job_title');
             $table->text('content');
+            $table->string('contact_address');
+            $table->date('due_date');
             $table->timestamps();
         });
     }

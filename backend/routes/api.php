@@ -27,6 +27,7 @@ Route::get('/Dashboard', [DashboardController::class, 'index']);
 
 Route::get('/posts', [PostsApiController::class, 'index']);
 Route::get('/category', [CategoryForPostController::class, 'index']);
+Route::post('/category', [CategoryForPostController::class, 'store']);
 
 Route::post('/posts', [PostsApiController::class, 'store']);
 Route::put('/posts/{post}', [PostsApiController::class, 'update']);

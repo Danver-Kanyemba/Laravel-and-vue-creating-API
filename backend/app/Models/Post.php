@@ -11,6 +11,6 @@ class Post extends Model
 
     protected $fillable = [
 
-        'title','content'
+        'company_name', 'job_title', 'content', 'contact_address', 'due_date'
     ];
 }

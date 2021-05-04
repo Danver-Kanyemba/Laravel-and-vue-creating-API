@@ -8,7 +8,16 @@ use App\Models\CategoryForPost;
 
 class CategoryForPostController extends Controller
 {
-    function index(){
+    public function index(){
         return CategoryForPost::All();
     }
+    public function store(){
+        request()->validate([
+            'name' => 'required',
+        ]);
+    
+        return CategoryForPost::create([
+            'name' => request('name'),
+        ]);
+    } 
 }
